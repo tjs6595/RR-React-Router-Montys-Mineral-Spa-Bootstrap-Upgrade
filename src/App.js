@@ -5,6 +5,11 @@ import './App.css';
 import Home from './components/Home'
 import About from './components/About'
 import Packages from './components/Packages'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
+import { NavItem } from 'react-bootstrap';
+
+
 
 
 function App() {
@@ -17,20 +22,25 @@ function App() {
       <Router>
         <header>
           <h1 className="title">Welcome to Monty's Mineral SPA</h1>
-
-          <div className="navBar">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About Us</Link>
-              </li>
-              <li>
-                <Link to="/packages">Our Packages</Link>
-              </li>
-            </ul>
-          </div>
+          <Container>
+            <nav defaultActiveKey="/" variant="tabs" fill>
+              <NavItem>
+                <Nav.Link href="/">
+                  <Link to="/">Home</Link>
+                </Nav.Link>
+              </NavItem>
+              <NavItem>
+                <Nav.Link>
+                  <Link to="/about">About Us</Link>
+                </Nav.Link>
+              </NavItem>
+              <NavItem>
+                <Nav.Link>
+                  <Link to="/packages">Our Packages</Link>
+                </Nav.Link>
+              </NavItem>
+            </nav>
+          </Container>
         </header>
 
         <div className="display">
